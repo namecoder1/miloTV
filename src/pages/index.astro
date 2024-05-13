@@ -4,10 +4,11 @@ import Hero from "../components/Hero.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 
 const posts = await getPosts();
+
 ---
 <MainLayout>
 
-	<Hero />
+	<Hero />	
 
 	{
 		posts.map((post) => (
