@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import heroImg from "../assets/hero.jpg";
+---
+
+<div class="bg-gray-900">
+  
+
+  <div class="relative isolate overflow-hidden pt-14">
+    <Image src={heroImg} alt="" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-30" />
+    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+          Nuovi video in arrivo. <a href="#" class="font-semibold text-white"><span class="absolute inset-0" aria-hidden="true"></span>Rimani connesso <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">sparati sto video zio</h1>
+        <p class="mt-6 text-lg leading-8 text-gray-300">Faccio video fighi che parlano di vita e shalla con i bro, questa è una descrizione temporanea quindi bella li se non capisci!</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a href="#" class="rounded-md border-2 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white hover:text-black focus-visible:outline duration-200 focus-visible:outline-2 focus-visible:outline-offset-2">Sparati un video</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-white">Scopri di più <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

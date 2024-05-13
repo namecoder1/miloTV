@@ -1,0 +1,35 @@
+---
+import { getPosts } from "../../sanity/api";
+import Hero from "../components/Hero.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const posts = await getPosts();
+---
+<MainLayout>
+
+	<Hero />
+
+	{
+		posts.map((post) => (
+			<article class="flex flex-col items-start justify-between ">
+			<div class="relative w-full">
+				<img class="rounded-md" src={post.image} alt="Immagine di copertina dell'articolo">
+				<div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+			</div>
+			<div class="max-w-xl">
+				<div class="mt-8 flex items-center gap-x-4 text-xs">           
+					<a href={'/blog/tag/' + post.title} class="relative z-10 rounded-full bg-gray-300 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-300/90">{post.categories}</a>
+				</div>
+				<div class="group relative">
+					<a href={'/blog/' + post.slug}>
+						<h1 class="text-2xl mt-2">{post.title}</h1>
+						<p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">Leggi per intero questo articolo che parla di {post.title}.</p>
+					</a>
+				</div>
+
+			</div>
+		</article>
+	))
+}
+
+</MainLayout>
